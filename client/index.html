@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Display/Form Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.943/pdf.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.21.2/dist/bootstrap-table.min.js"></script>
+    <script src="scripts/api-invokers.js"></script>
+    <script src="scripts/controller.js"></script>
+</head>
+<body>
+
+    <div id="retrieveData" style="display:none;">
+        <h2>Retrieved Data</h2>
+        <!-- Table to display the data -->
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Authors</th>
+                    <th>Publisher</th>
+                    <th>Publication Date</th>
+                    <th>Edition</th>
+                    <th>Genre</th>
+                    <th>Language</th>
+                    <th>Keywords</th>
+                    <th>Number of Copies</th>
+                </tr>
+            </thead>
+            <tbody id="dataBody"></tbody>
+        </table>
+        <p>This is the retrieved data.</p>
+    </div>
+
+    <div id="newDataForm" style="display:none;">
+        <h2>New Data Form</h2>
+        <!-- Your new data form goes here -->
+        <!-- <form action="#" method="post"> -->
+            <!-- Your form fields go here -->
+        <form id="newdata">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br>
+
+        <label for="authors">Authors:</label>
+        <input type="text" id="authors" name="authors" required><br>
+
+        <label for="publisher">Publisher:</label>
+        <input type="text" id="publisher" name="publisher"><br>
+
+        <label for="publicationDate">Publication Date:</label>
+        <input type="text" id="publicationDate" name="publicationDate"><br>
+
+        <label for="edition">Edition:</label>
+        <input type="text" id="edition" name="edition"><br>
+
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre"><br>
+
+        <label for="language">Language:</label>
+        <input type="text" id="language" name="language"><br>
+
+        <label for="keywords">Keywords:</label>
+        <input type="text" id="keywords" name="keywords"><br>
+
+        <label for="numOfCopies">Number of Copies:</label>
+        <input type="number" id="numOfCopies" name="numOfCopies" min="1" required><br>
+
+        </form>
+        <input type="submit" value="Add Book" id="newsubmit">
+        <!-- </form> -->
+    </div>
+
+    <div id="updateDataForm" style="display:none;">
+        <select id="listbook">list of books</select>
+        <!-- <select id="listbook2">list of books</select> -->
+        <h2>Update Data Form</h2>
+        <label for="title">Title:</label>
+        <input type="text" id="utitle" name="title" required><br>
+
+        <label for="authors">Authors:</label>
+        <input type="text" id="uauthors" name="authors" required><br>
+
+        <label for="publisher">Publisher:</label>
+        <input type="text" id="upublisher" name="publisher"><br>
+
+        <label for="publicationDate">Publication Date:</label>
+        <input type="text" id="upublicationDate" name="publicationDate"><br>
+
+        <label for="edition">Edition:</label>
+        <input type="text" id="uedition" name="edition"><br>
+
+        <label for="genre">Genre:</label>
+        <input type="text" id="ugenre" name="genre"><br>
+
+        <label for="language">Language:</label>
+        <input type="text" id="ulanguage" name="language"><br>
+
+        <label for="keywords">Keywords:</label>
+        <input type="text" id="ukeywords" name="keywords"><br>
+
+        <label for="numOfCopies">Number of Copies:</label>
+        <input type="number" id="unumOfCopies" name="numOfCopies" min="1" required><br>
+
+        
+        <input type="submit" value="Add Book" id="usubmit">
+    </div>
+
+    <!-- <form action="#" method="get" id="myForm"> -->
+        <label for="options">Select an option:</label>
+        <select id="options" name="options">
+            <option value="retrievedata">Retrieve Data</option>
+            <option value="newdata">New Data</option>
+            <option value="updatedata">Update Data</option>
+        </select>
+        <input type="submit" value="Submit" id="submit">
+    <!-- </form> -->
+
+    <!-- <script>
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var selectedOption = document.getElementById('options').value;
+
+            // Hide all divs initially
+            document.getElementById('retrieveData').style.display = 'none';
+            document.getElementById('newDataForm').style.display = 'none';
+            document.getElementById('updateDataForm').style.display = 'none';
+
+            // Show the selected div based on the option
+            if (selectedOption === 'retrievedata') {
+                document.getElementById('retrieveData').style.display = 'block';
+            } else if (selectedOption === 'newdata') {
+                document.getElementById('newDataForm').style.display = 'block';
+            } else if (selectedOption === 'updatedata') {
+                document.getElementById('updateDataForm').style.display = 'block';
+            }
+        });
+    </script> -->
+
+</body>
+</html>
